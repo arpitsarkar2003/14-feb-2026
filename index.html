@@ -1,0 +1,1638 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine Unfold | For Nabanita</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Lato:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    <script
+      type="module"
+      async
+      src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fvalentine8391back.builtwithrocket.new&_be=https%3A%2F%2Fappanalytics.rocket.new&_v=0.1.17"
+    ></script>
+    <script
+      type="module"
+      defer
+      src="https://static.rocket.new/rocket-shot.js?v=0.0.2"
+    ></script>
+  </head>
+  <body
+    class="bg-gradient-to-br from-milk via-blush/30 to-milk text-velvet overflow-x-hidden"
+  >
+    <!-- Intro Overlay -->
+    <div id="intro-overlay" class="intro-overlay">
+      <div class="intro-content">
+        <p class="intro-greeting">Hiii, noobie.</p>
+        <p class="intro-question">You want to go inside?</p>
+        <button id="intro-yes-btn" class="intro-yes-btn" type="button">Yes 💕</button>
+      </div>
+    </div>
+
+    <!-- Music Player Toggle -->
+    <div id="music-player" class="music-player">
+      <button id="music-toggle" class="music-toggle-btn" aria-label="Toggle music">
+        <svg class="music-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18V5l12-2v13" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="6" cy="18" r="3"/>
+          <circle cx="18" cy="16" r="3"/>
+        </svg>
+        <svg class="pause-icon hidden" viewBox="0 0 24 24" fill="currentColor">
+          <rect x="6" y="4" width="4" height="16" rx="1"/>
+          <rect x="14" y="4" width="4" height="16" rx="1"/>
+        </svg>
+      </button>
+      <div id="music-controls" class="music-controls">
+        <button id="play-pause-btn" class="play-pause-btn" aria-label="Play or pause">
+          <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+          <svg class="pause-icon-ctrl hidden" viewBox="0 0 24 24" fill="currentColor">
+            <rect x="6" y="4" width="4" height="16" rx="1"/>
+            <rect x="14" y="4" width="4" height="16" rx="1"/>
+          </svg>
+        </button>
+        <div class="volume-control">
+          <svg class="volume-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" stroke-linecap="round"/>
+          </svg>
+          <input type="range" id="volume-slider" class="volume-slider" min="0" max="100" value="10" aria-label="Volume">
+        </div>
+      </div>
+      <audio id="bg-music" loop preload="auto">
+        <source src="assets/song.mp3" type="audio/mpeg">
+      </audio> 
+    </div>
+
+    <!-- Floating Hearts Background -->
+    <div
+      class="floating-hearts-container fixed inset-0 pointer-events-none z-0"
+      aria-hidden="true"
+    >
+      <div class="floating-heart" style="left: 10%; animation-delay: 0s">❤</div>
+      <div class="floating-heart" style="left: 25%; animation-delay: 2s">
+        💕
+      </div>
+      <div class="floating-heart" style="left: 45%; animation-delay: 4s">
+        💖
+      </div>
+      <div class="floating-heart" style="left: 65%; animation-delay: 1s">
+        💗
+      </div>
+      <div class="floating-heart" style="left: 80%; animation-delay: 3s">
+        💝
+      </div>
+      <div class="floating-heart" style="left: 90%; animation-delay: 5s">❤</div>
+      <div class="floating-heart" style="left: 15%; animation-delay: 6s">
+        💗
+      </div>
+      <div class="floating-heart" style="left: 55%; animation-delay: 7s">
+        💕
+      </div>
+      <div class="floating-heart" style="left: 75%; animation-delay: 8s">
+        💖
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section
+      class="hero-section relative z-10 min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 py-12 sm:py-16 md:py-20 text-center"
+    >
+      <div
+        class="max-w-4xl w-full space-y-8 sm:space-y-10 md:space-y-12 animate-fade-in"
+      >
+        <div class="space-y-4 sm:space-y-5 md:space-y-6">
+          <p
+            class="text-xs sm:text-sm uppercase tracking-[0.3em] sm:tracking-[0.4em] text-velvet/60 font-lato font-light px-2"
+          >
+            A Love Letter For
+          </p>
+          <h1
+            class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-playfair font-bold tracking-tight leading-none text-velvet heart-decoration px-2"
+          >
+            My Dearest<br />
+            <span class="italic font-light text-rose-600">Nabanita</span>
+          </h1>
+          <p
+            class="text-base sm:text-lg md:text-xl text-velvet/70 font-lato max-w-2xl mx-auto leading-relaxed px-4"
+          >
+            Every moment with you is a page in our story. Through challenges and
+            joy, we've made it this far together. This is our journey, unfolding
+            one memory at a time. 💕
+          </p>
+          <div class="flex justify-center gap-3 sm:gap-4 mt-6 sm:mt-8">
+            <span
+              class="text-2xl sm:text-3xl md:text-4xl animate-bounce"
+              style="animation-delay: 0s"
+              >💖</span
+            >
+            <span
+              class="text-2xl sm:text-3xl md:text-4xl animate-bounce"
+              style="animation-delay: 0.2s"
+              >✨</span
+            >
+            <span
+              class="text-2xl sm:text-3xl md:text-4xl animate-bounce"
+              style="animation-delay: 0.4s"
+              >💕</span
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div
+        class="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 sm:gap-3 text-velvet/60"
+      >
+        <span
+          class="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] font-lato font-light"
+          >Scroll to Explore</span
+        >
+        <div
+          class="w-px h-12 sm:h-16 bg-gradient-to-b from-velvet/60 to-transparent animate-pulse"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Parallax Photo Gallery Section -->
+    <section
+      class="gallery-section relative z-10 py-16 sm:py-20 md:py-28 px-4 sm:px-6 overflow-hidden"
+    >
+      <div class="max-w-6xl mx-auto w-full">
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-center mb-4 text-velvet heart-decoration px-2"
+        >
+          Our Memories Together
+        </h2>
+        <p
+          class="text-center text-velvet/60 font-lato mb-12 sm:mb-16 md:mb-20 text-sm sm:text-base"
+        >
+          Every picture tells a piece of our story 💕
+        </p>
+
+        <!-- Parallax Gallery Grid -->
+        <div class="parallax-gallery">
+          <!-- Row 1: 3 columns -->
+          <div
+            class="gallery-row"
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1.4fr 1fr;
+              gap: 16px;
+              margin-bottom: 16px;
+            "
+          >
+            <div class="gallery-item parallax-item" data-speed="-30">
+              <div class="gallery-card">
+                <img
+                  src="assets/IMG_5.jpg"
+                  alt="Night out together"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <span>Night adventures 🌙</span>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item parallax-item" data-speed="40">
+              <div class="gallery-card gallery-card-tall">
+                <img src="assets/IMG_1.png" alt="Sweet moment" loading="lazy" />
+                <div class="gallery-overlay">
+                  <span>Sweet moments 💋</span>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item parallax-item" data-speed="-20">
+              <div class="gallery-card">
+                <img
+                  src="assets/IMG_11.jpg"
+                  alt="Mirror selfie"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <span>Reflections of us 🪞</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 2: 2 columns -->
+          <div
+            class="gallery-row"
+            style="
+              display: grid;
+              grid-template-columns: 1.2fr 1fr;
+              gap: 16px;
+              margin-bottom: 16px;
+            "
+          >
+            <div class="gallery-item parallax-item" data-speed="25">
+              <div class="gallery-card">
+                <img src="assets/Image_2.jpg" alt="Video call" loading="lazy" />
+                <div class="gallery-overlay">
+                  <span>Miles apart, hearts together 📱</span>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item parallax-item" data-speed="-35">
+              <div class="gallery-card">
+                <img
+                  src="assets/IMG_3.jpg"
+                  alt="Holding hands"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <span>Pinky promise 🤙</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 3: 3 columns -->
+          <div
+            class="gallery-row"
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr 1.3fr;
+              gap: 16px;
+              margin-bottom: 16px;
+            "
+          >
+            <div class="gallery-item parallax-item" data-speed="20">
+              <div class="gallery-card">
+                <img src="assets/IMG_6.jpg" alt="Together" loading="lazy" />
+                <div class="gallery-overlay">
+                  <span>Us 💖</span>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item parallax-item" data-speed="-25">
+              <div class="gallery-card">
+                <img src="assets/IMG_7.jpg" alt="Memory" loading="lazy" />
+                <div class="gallery-overlay">
+                  <span>Cherished moments ✨</span>
+                </div>
+              </div>
+            </div>
+            <div class="gallery-item parallax-item" data-speed="30">
+              <div class="gallery-card">
+                <img src="assets/IMG_8.jpg" alt="Our moment" loading="lazy" />
+                <div class="gallery-overlay">
+                  <span>Our little world 🌍</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Row 4: Featured single -->
+          <div
+            class="gallery-row"
+            style="
+              display: grid;
+              grid-template-columns: 1fr;
+              gap: 16px;
+              max-width: 500px;
+              margin: 0 auto;
+            "
+          >
+            <div class="gallery-item parallax-item" data-speed="-15">
+              <div class="gallery-card">
+                <img
+                  src="assets/IMG_9.jpg"
+                  alt="Special moment"
+                  loading="lazy"
+                />
+                <div class="gallery-overlay">
+                  <span>Forever & always 💕</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section
+      class="timeline-section relative z-10 py-12 sm:py-16 md:py-20 px-4 sm:px-6"
+    >
+      <div class="max-w-4xl mx-auto w-full">
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-center mb-12 sm:mb-16 md:mb-20 text-velvet heart-decoration px-2"
+        >
+          Our Journey
+        </h2>
+
+        <div class="timeline-container relative">
+          <!-- Vertical Line -->
+          <div
+            class="timeline-line absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-velvet/30 via-rose-400/50 to-velvet/30 -translate-x-1/2"
+          ></div>
+
+          <!-- Timeline Event 1: First Met -->
+          <div
+            class="timeline-event flex items-center mb-16 sm:mb-20 md:mb-24 relative group"
+          >
+            <div
+              class="timeline-content w-full sm:w-5/12 text-center sm:text-right pr-0 sm:pr-8 transform transition-all duration-500 group-hover:scale-105"
+            >
+              <h3
+                class="text-2xl sm:text-3xl font-playfair font-semibold text-velvet mb-2"
+              >
+                First Met 💫
+              </h3>
+              <p
+                class="text-sm sm:text-base text-velvet/70 font-lato mb-2 font-semibold"
+              >
+                November 15, 2023
+              </p>
+              <p
+                class="text-sm sm:text-base text-velvet/60 font-lato leading-relaxed"
+              >
+                The day our story began. The moment I saw you, I knew something
+                special was about to unfold.
+              </p>
+            </div>
+            <div
+              class="timeline-dot absolute left-1/2 -translate-x-1/2 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-velvet border-4 border-milk shadow-lg z-10 group-hover:scale-125 transition-transform duration-300"
+            ></div>
+            <div class="hidden sm:block w-5/12"></div>
+          </div>
+
+          <!-- Timeline Event 2: First Hug -->
+          <div
+            class="timeline-event flex items-center mb-16 sm:mb-20 md:mb-24 relative flex-row-reverse group"
+          >
+            <div
+              class="timeline-content w-full sm:w-5/12 text-center sm:text-left pl-0 sm:pl-8 transform transition-all duration-500 group-hover:scale-105"
+            >
+              <h3
+                class="text-2xl sm:text-3xl font-playfair font-semibold text-velvet mb-2"
+              >
+                First Hug 🤗
+              </h3>
+              <p
+                class="text-sm sm:text-base text-velvet/70 font-lato mb-2 font-semibold"
+              >
+                December 19, 2023
+              </p>
+              <p
+                class="text-sm sm:text-base text-velvet/60 font-lato leading-relaxed"
+              >
+                A delightful memory that still warms my heart. The comfort of
+                your embrace felt like home.
+              </p>
+            </div>
+            <div
+              class="timeline-dot absolute left-1/2 -translate-x-1/2 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-rose-600 border-4 border-milk shadow-lg z-10 group-hover:scale-125 transition-transform duration-300"
+            ></div>
+            <div class="hidden sm:block w-5/12"></div>
+          </div>
+
+          <!-- Timeline Event 3: First Kiss -->
+          <div
+            class="timeline-event flex items-center mb-16 sm:mb-20 relative group"
+          >
+            <div
+              class="timeline-content w-full sm:w-5/12 text-center sm:text-right pr-0 sm:pr-8 transform transition-all duration-500 group-hover:scale-105"
+            >
+              <h3
+                class="text-2xl sm:text-3xl font-playfair font-semibold text-velvet mb-2"
+              >
+                First Kiss 💋
+              </h3>
+              <p
+                class="text-sm sm:text-base text-velvet/70 font-lato mb-2 font-semibold"
+              >
+                February 23, 2024
+              </p>
+              <p
+                class="text-sm sm:text-base text-velvet/60 font-lato leading-relaxed"
+              >
+                A moment frozen in time. The world stopped, and it was just us,
+                lost in each other.
+              </p>
+            </div>
+            <div
+              class="timeline-dot absolute left-1/2 -translate-x-1/2 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-pink-500 border-4 border-milk shadow-lg z-10 group-hover:scale-125 transition-transform duration-300"
+            ></div>
+            <div class="hidden sm:block w-5/12"></div>
+          </div>
+
+          <!-- Timeline Event 4: Today & Forever -->
+          <div
+            class="timeline-event flex items-center relative flex-row-reverse group"
+          >
+            <div
+              class="timeline-content w-full sm:w-5/12 text-center sm:text-left pl-0 sm:pl-8 transform transition-all duration-500 group-hover:scale-105"
+            >
+              <h3
+                class="text-2xl sm:text-3xl font-playfair font-semibold text-velvet mb-2"
+              >
+                Today & Forever 💖
+              </h3>
+              <p
+                class="text-sm sm:text-base text-velvet/70 font-lato mb-2 font-semibold"
+              >
+                February 14, 2026
+              </p>
+              <p
+                class="text-sm sm:text-base text-velvet/60 font-lato leading-relaxed"
+              >
+                Through so many challenges, we've made it this far. Every day
+                with you is a blessing. Here's to our forever.
+              </p>
+            </div>
+            <div
+              class="timeline-dot absolute left-1/2 -translate-x-1/2 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-velvet border-4 border-milk shadow-lg z-10 animate-pulse group-hover:scale-125 transition-transform duration-300"
+            ></div>
+            <div class="hidden sm:block w-5/12"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Love Letters Section -->
+    <section
+      class="love-letters-section relative z-10 py-12 sm:py-16 md:py-20 px-4 sm:px-6"
+    >
+      <div class="max-w-5xl mx-auto w-full">
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-center mb-4 text-velvet heart-decoration px-2"
+        >
+          Love Letters & Feelings
+        </h2>
+        <p
+          class="text-center text-velvet/60 font-lato mb-12 sm:mb-16 text-sm sm:text-base"
+        >
+          Click on any letter to unfold my heart 💌
+        </p>
+
+        <div
+          class="letters-grid grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"
+        >
+          <!-- Letter Card 1 -->
+          <div
+            class="letter-card bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border-2 border-blush/40 overflow-hidden transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
+          >
+            <div
+              class="letter-header p-6 cursor-pointer flex items-center justify-between"
+              onclick="toggleLetter(this)"
+            >
+              <div class="flex items-center gap-4">
+                <span class="text-3xl sm:text-4xl">💌</span>
+                <div>
+                  <h3
+                    class="text-xl sm:text-2xl font-playfair font-semibold text-velvet"
+                  >
+                    To My Soulmate
+                  </h3>
+                  <p class="text-xs sm:text-sm text-velvet/60 font-lato mt-1">
+                    A message from my heart
+                  </p>
+                </div>
+              </div>
+              <svg
+                class="letter-arrow w-6 h-6 text-velvet/60 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="letter-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <div class="p-6 pt-0 border-t border-blush/20">
+                <p
+                  class="text-velvet/80 font-lato leading-relaxed text-sm sm:text-base"
+                >
+                  Nabanita, you are the light that brightens my darkest days.
+                  Every moment with you feels like a dream I never want to wake
+                  up from. Your smile, your laugh, the way you look at me -
+                  everything about you makes my heart skip a beat. I am so
+                  grateful that our paths crossed on November 15, 2023. You've
+                  made my life infinitely better just by being in it. I love you
+                  more than words can express. 💖
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Letter Card 2 -->
+          <div
+            class="letter-card bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border-2 border-blush/40 overflow-hidden transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
+          >
+            <div
+              class="letter-header p-6 cursor-pointer flex items-center justify-between"
+              onclick="toggleLetter(this)"
+            >
+              <div class="flex items-center gap-4">
+                <span class="text-3xl sm:text-4xl">✨</span>
+                <div>
+                  <h3
+                    class="text-xl sm:text-2xl font-playfair font-semibold text-velvet"
+                  >
+                    Our Strength
+                  </h3>
+                  <p class="text-xs sm:text-sm text-velvet/60 font-lato mt-1">
+                    Through every challenge
+                  </p>
+                </div>
+              </div>
+              <svg
+                class="letter-arrow w-6 h-6 text-velvet/60 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="letter-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <div class="p-6 pt-0 border-t border-blush/20">
+                <p
+                  class="text-velvet/80 font-lato leading-relaxed text-sm sm:text-base"
+                >
+                  We've faced so many challenges together, but each one has only
+                  made us stronger. When things got tough, we didn't give up. We
+                  held on to each other and fought through it all. That's what
+                  makes us special - our ability to weather any storm together.
+                  You are my rock, my safe place, and my greatest support.
+                  Together, we are unstoppable. 💪❤️
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Letter Card 3 -->
+          <div
+            class="letter-card bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border-2 border-blush/40 overflow-hidden transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
+          >
+            <div
+              class="letter-header p-6 cursor-pointer flex items-center justify-between"
+              onclick="toggleLetter(this)"
+            >
+              <div class="flex items-center gap-4">
+                <span class="text-3xl sm:text-4xl">💕</span>
+                <div>
+                  <h3
+                    class="text-xl sm:text-2xl font-playfair font-semibold text-velvet"
+                  >
+                    Favorite Quote
+                  </h3>
+                  <p class="text-xs sm:text-sm text-velvet/60 font-lato mt-1">
+                    Words that remind me of us
+                  </p>
+                </div>
+              </div>
+              <svg
+                class="letter-arrow w-6 h-6 text-velvet/60 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="letter-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <div class="p-6 pt-0 border-t border-blush/20">
+                <p
+                  class="text-velvet/80 font-playfair italic text-lg sm:text-xl leading-relaxed mb-4 text-center"
+                >
+                  "In all the world, there is no heart for me like yours. In all
+                  the world, there is no love for you like mine."
+                </p>
+                <p
+                  class="text-velvet/60 font-lato text-sm sm:text-base text-center"
+                >
+                  This quote perfectly captures how I feel about us. Our love is
+                  unique, irreplaceable, and eternal. You are my one and only,
+                  Nabanita. 💖
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Letter Card 4 -->
+          <div
+            class="letter-card bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border-2 border-blush/40 overflow-hidden transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
+          >
+            <div
+              class="letter-header p-6 cursor-pointer flex items-center justify-between"
+              onclick="toggleLetter(this)"
+            >
+              <div class="flex items-center gap-4">
+                <span class="text-3xl sm:text-4xl">🌹</span>
+                <div>
+                  <h3
+                    class="text-xl sm:text-2xl font-playfair font-semibold text-velvet"
+                  >
+                    My Promise
+                  </h3>
+                  <p class="text-xs sm:text-sm text-velvet/60 font-lato mt-1">
+                    Forever and always
+                  </p>
+                </div>
+              </div>
+              <svg
+                class="letter-arrow w-6 h-6 text-velvet/60 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="letter-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <div class="p-6 pt-0 border-t border-blush/20">
+                <p
+                  class="text-velvet/80 font-lato leading-relaxed text-sm sm:text-base"
+                >
+                  I promise to always be there for you, through the good times
+                  and the bad. I promise to make you laugh when you're sad, to
+                  hold you when you need comfort, and to celebrate every victory
+                  with you. I promise to love you more each day, to respect you,
+                  to support your dreams, and to build a beautiful future
+                  together. You have my heart, today and always. 💍❤️
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Letter Card 5 -->
+          <div
+            class="letter-card bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border-2 border-blush/40 overflow-hidden transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
+          >
+            <div
+              class="letter-header p-6 cursor-pointer flex items-center justify-between"
+              onclick="toggleLetter(this)"
+            >
+              <div class="flex items-center gap-4">
+                <span class="text-3xl sm:text-4xl">🎵</span>
+                <div>
+                  <h3
+                    class="text-xl sm:text-2xl font-playfair font-semibold text-velvet"
+                  >
+                    Our Song
+                  </h3>
+                  <p class="text-xs sm:text-sm text-velvet/60 font-lato mt-1">
+                    The melody of us
+                  </p>
+                </div>
+              </div>
+              <svg
+                class="letter-arrow w-6 h-6 text-velvet/60 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="letter-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <div class="p-6 pt-0 border-t border-blush/20">
+                <p
+                  class="text-velvet/80 font-lato leading-relaxed text-sm sm:text-base"
+                >
+                  Every love story has a soundtrack, and ours is the most
+                  beautiful melody I've ever heard. When I think of you, my
+                  heart sings. Every moment we share creates a new note in our
+                  symphony. From our first meeting to our first hug, from our
+                  first kiss to this very moment - it's all part of our perfect
+                  song. Let's keep making music together, my love. 🎶💕
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Letter Card 6 -->
+          <div
+            class="letter-card bg-white/90 backdrop-blur-sm rounded-2xl shadow-lg border-2 border-blush/40 overflow-hidden transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-1"
+          >
+            <div
+              class="letter-header p-6 cursor-pointer flex items-center justify-between"
+              onclick="toggleLetter(this)"
+            >
+              <div class="flex items-center gap-4">
+                <span class="text-3xl sm:text-4xl">🌟</span>
+                <div>
+                  <h3
+                    class="text-xl sm:text-2xl font-playfair font-semibold text-velvet"
+                  >
+                    Why I Love You
+                  </h3>
+                  <p class="text-xs sm:text-sm text-velvet/60 font-lato mt-1">
+                    Countless reasons
+                  </p>
+                </div>
+              </div>
+              <svg
+                class="letter-arrow w-6 h-6 text-velvet/60 transition-transform duration-300"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
+              </svg>
+            </div>
+            <div
+              class="letter-content max-h-0 overflow-hidden transition-all duration-500 ease-in-out"
+            >
+              <div class="p-6 pt-0 border-t border-blush/20">
+                <p
+                  class="text-velvet/80 font-lato leading-relaxed text-sm sm:text-base mb-3"
+                >
+                  I love you for your kindness, your strength, and your
+                  beautiful soul. I love the way you care for others, the way
+                  you make me feel special, and the way you light up any room
+                  you enter. I love your quirks, your dreams, and even your
+                  imperfections - because they make you perfectly you. I love
+                  how you challenge me to be better, how you support me
+                  unconditionally, and how you make every day an adventure. Most
+                  of all, I love that you chose me to share this journey with.
+                  You are my everything, Nabanita. ✨💖
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <div class="valentine-question-section">
+      <div>
+        <h2>Will you be my Valentine?</h2>
+
+        <div class="button-container">
+          <!-- Yes Button -->
+          <button
+            id="yes-button"
+            class="valentine-btn yes-btn"
+            aria-label="Click Yes to be my Valentine"
+          >
+            Yes! 💖
+          </button>
+
+          <!-- No Button (moves on hover, stays visible with higher z-index) -->
+          <button
+            id="no-button"
+            class="valentine-btn no-btn"
+            aria-label="No button that moves away when you try to click it"
+          >
+            No
+          </button>
+        </div>
+
+        <!-- Hidden celebration message -->
+        <div id="celebration-message" class="hidden">
+          <div>💕</div>
+          <p>I knew you'd say yes!</p>
+          <p>You've made me the happiest person alive! 💖</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Love Message Section -->
+    <section
+      class="message-section relative z-10 py-12 sm:py-16 md:py-20 px-4 sm:px-6"
+    >
+      <div class="max-w-3xl mx-auto w-full">
+        <div
+          class="bg-white/80 backdrop-blur-sm p-8 sm:p-10 md:p-12 rounded-2xl shadow-2xl border-2 border-blush/30"
+        >
+          <p
+            class="text-lg sm:text-xl md:text-2xl font-playfair text-velvet leading-relaxed text-center italic"
+          >
+            "Every challenge we've faced has only made us stronger. Every moment
+            with you is a treasure. Thank you for being my partner, my love, my
+            everything. Here's to many more memories together, Nabanita. I love
+            you. 💕"
+          </p>
+          <div class="flex justify-center gap-2 mt-8">
+            <span class="text-3xl animate-pulse">💖</span>
+            <span class="text-3xl animate-pulse" style="animation-delay: 0.3s"
+              >💕</span
+            >
+            <span class="text-3xl animate-pulse" style="animation-delay: 0.6s"
+              >💖</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 py-8 sm:py-12 px-4 text-center">
+      <p class="text-sm sm:text-base text-velvet/60 font-lato">
+        Made with 💖 for Nabanita
+      </p>
+      <p class="text-xs sm:text-sm text-velvet/40 font-lato mt-2">
+        Our love story continues...
+      </p>
+    </footer>
+
+    <!-- GSAP Animations -->
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+
+// Toggle letter expand/collapse function
+function toggleLetter(headerElement) {
+  const card = headerElement.closest('.letter-card');
+  const content = card.querySelector('.letter-content');
+  const arrow = card.querySelector('.letter-arrow');
+  const isExpanded = content.style.maxHeight && content.style.maxHeight !== '0px';
+
+  if (isExpanded) {
+    // Collapse
+    content.style.maxHeight = '0px';
+    arrow.style.transform = 'rotate(0deg)';
+    card.style.transform = 'scale(1)';
+  } else {
+    // Expand
+    content.style.maxHeight = content.scrollHeight + 'px';
+    arrow.style.transform = 'rotate(180deg)';
+    
+    // Animate with GSAP for smooth effect
+    gsap.from(content.querySelector('div'), {
+      opacity: 0,
+      y: -20,
+      duration: 0.5,
+      ease: 'power2.out'
+    });
+  }
+}
+
+// Hero fade-in animation
+gsap.from(".hero-section .space-y-4", {
+  opacity: 0,
+  y: 50,
+  duration: 1.5,
+  ease: "power3.out",
+});
+
+// Gallery section - heading animation
+gsap.from(".gallery-section h2", {
+  scrollTrigger: {
+    trigger: ".gallery-section",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  ease: "power3.out",
+});
+
+gsap.from(".gallery-section > div > p", {
+  scrollTrigger: {
+    trigger: ".gallery-section",
+    start: "top 75%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  y: 30,
+  duration: 0.8,
+  delay: 0.3,
+  ease: "power3.out",
+});
+
+// Gallery items - staggered fade-in on scroll
+gsap.utils.toArray(".gallery-item").forEach((item, index) => {
+  gsap.from(item, {
+    scrollTrigger: {
+      trigger: item,
+      start: "top 90%",
+      toggleActions: "play none none reverse",
+    },
+    opacity: 0,
+    y: 60,
+    scale: 0.9,
+    rotation: index % 2 === 0 ? -3 : 3,
+    duration: 0.8,
+    delay: (index % 3) * 0.15,
+    ease: "power3.out",
+  });
+});
+
+// Parallax scroll effect - each item moves at its own speed
+gsap.utils.toArray(".parallax-item").forEach((item) => {
+  const speed = parseFloat(item.getAttribute("data-speed")) || 0;
+  gsap.to(item, {
+    scrollTrigger: {
+      trigger: item,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: 1.5,
+    },
+    y: speed,
+    ease: "none",
+  });
+});
+
+// Timeline section - fade-in and slide-up for heading
+gsap.from(".timeline-section h2", {
+  scrollTrigger: {
+    trigger: ".timeline-section",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  y: 50,
+  scale: 0.9,
+  duration: 1,
+  ease: "power3.out",
+});
+
+// Timeline events animation - slide from sides with fade
+gsap.utils.toArray(".timeline-event").forEach((event, index) => {
+  gsap.from(event, {
+    scrollTrigger: {
+      trigger: event,
+      start: "top 85%",
+      toggleActions: "play none none reverse",
+    },
+    opacity: 0,
+    x: index % 2 === 0 ? -100 : 100,
+    scale: 0.9,
+    duration: 1,
+    ease: "power3.out",
+  });
+});
+
+// Timeline line drawing animation
+gsap.from(".timeline-line", {
+  scrollTrigger: {
+    trigger: ".timeline-section",
+    start: "top 80%",
+    end: "bottom 20%",
+    scrub: 1,
+  },
+  scaleY: 0,
+  transformOrigin: "top center",
+});
+
+// Love Letters section - fade-in, slide-up, scale for heading
+gsap.from(".love-letters-section h2", {
+  scrollTrigger: {
+    trigger: ".love-letters-section",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  y: 50,
+  scale: 0.9,
+  duration: 1,
+  ease: "power3.out",
+});
+
+gsap.from(".love-letters-section > div > p", {
+  scrollTrigger: {
+    trigger: ".love-letters-section",
+    start: "top 75%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  y: 30,
+  duration: 0.8,
+  delay: 0.3,
+  ease: "power3.out",
+});
+
+// Love letter cards - staggered fade-in, slide-up, scale
+gsap.utils.toArray(".letter-card").forEach((card, index) => {
+  gsap.from(card, {
+    scrollTrigger: {
+      trigger: card,
+      start: "top 90%",
+      toggleActions: "play none none reverse",
+    },
+    opacity: 0,
+    y: 60,
+    scale: 0.9,
+    duration: 0.8,
+    delay: index * 0.1,
+    ease: "power3.out",
+  });
+});
+
+// Message section - fade-in, slide-up, scale animation
+gsap.from(".message-section .bg-white\\/80", {
+  scrollTrigger: {
+    trigger: ".message-section",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  y: 60,
+  scale: 0.9,
+  duration: 1.2,
+  ease: "power3.out",
+});
+
+// Valentine Question Interactive Buttons - Enhanced Bubble Effect
+const yesButton = document.getElementById("yes-button");
+const noButton = document.getElementById("no-button");
+const celebrationMessage = document.getElementById("celebration-message");
+const buttonContainer = document.querySelector(".button-container");
+
+// Create audio context for celebration sound
+let audioContext;
+
+function initAudioContext() {
+  if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  }
+}
+
+// Function to play celebration sound using Web Audio API
+function playCelebrationSound() {
+  initAudioContext();
+
+  // Create a simple melody for celebration
+  const notes = [
+    { frequency: 523.25, duration: 0.15 }, // C5
+    { frequency: 659.25, duration: 0.15 }, // E5
+    { frequency: 783.99, duration: 0.15 }, // G5
+    { frequency: 1046.5, duration: 0.3 }, // C6
+  ];
+
+  let startTime = audioContext.currentTime;
+
+  notes.forEach((note) => {
+    const oscillator = audioContext.createOscillator();
+    const gainNode = audioContext.createGain();
+
+    oscillator.connect(gainNode);
+    gainNode.connect(audioContext.destination);
+
+    oscillator.frequency.value = note.frequency;
+    oscillator.type = "sine";
+
+    gainNode.gain.setValueAtTime(0.3, startTime);
+    gainNode.gain.exponentialRampToValueAtTime(
+      0.01,
+      startTime + note.duration
+    );
+
+    oscillator.start(startTime);
+    oscillator.stop(startTime + note.duration);
+
+    startTime += note.duration;
+  });
+}
+
+// Function to play bubble burst sound
+function playBurstSound() {
+  initAudioContext();
+
+  // Create burst sound effect (pop/explosion)
+  const oscillator = audioContext.createOscillator();
+  const gainNode = audioContext.createGain();
+  const filter = audioContext.createBiquadFilter();
+
+  oscillator.connect(filter);
+  filter.connect(gainNode);
+  gainNode.connect(audioContext.destination);
+
+  // Sharp burst sound
+  oscillator.frequency.setValueAtTime(150, audioContext.currentTime);
+  oscillator.frequency.exponentialRampToValueAtTime(
+    50,
+    audioContext.currentTime + 0.1
+  );
+
+  filter.type = "lowpass";
+  filter.frequency.setValueAtTime(2000, audioContext.currentTime);
+  filter.frequency.exponentialRampToValueAtTime(
+    100,
+    audioContext.currentTime + 0.1
+  );
+
+  gainNode.gain.setValueAtTime(0.5, audioContext.currentTime);
+  gainNode.gain.exponentialRampToValueAtTime(
+    0.01,
+    audioContext.currentTime + 0.05
+  );
+
+  oscillator.start(audioContext.currentTime);
+  oscillator.stop(audioContext.currentTime + 0.05);
+
+  // Add white noise for realistic pop
+  const bufferSize = audioContext.sampleRate * 0.05;
+  const buffer = audioContext.createBuffer(
+    1,
+    bufferSize,
+    audioContext.sampleRate
+  );
+  const data = buffer.getChannelData(0);
+
+  for (let i = 0; i < bufferSize; i++) {
+    data[i] = Math.random() * 2 - 1;
+  }
+
+  const noise = audioContext.createBufferSource();
+  const noiseGain = audioContext.createGain();
+  const noiseFilter = audioContext.createBiquadFilter();
+
+  noise.buffer = buffer;
+  noise.connect(noiseFilter);
+  noiseFilter.connect(noiseGain);
+  noiseGain.connect(audioContext.destination);
+
+  noiseFilter.type = "highpass";
+  noiseFilter.frequency.value = 1000;
+
+  noiseGain.gain.setValueAtTime(0.3, audioContext.currentTime);
+  noiseGain.gain.exponentialRampToValueAtTime(
+    0.01,
+    audioContext.currentTime + 0.05
+  );
+
+  noise.start(audioContext.currentTime);
+  noise.stop(audioContext.currentTime + 0.05);
+}
+
+// Function to trigger confetti explosion
+function triggerConfetti() {
+  // Multiple confetti bursts for dramatic effect
+  const duration = 3000;
+  const animationEnd = Date.now() + duration;
+  const defaults = {
+    startVelocity: 30,
+    spread: 360,
+    ticks: 60,
+    zIndex: 9999,
+  };
+
+  function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  const interval = setInterval(function () {
+    const timeLeft = animationEnd - Date.now();
+
+    if (timeLeft <= 0) {
+      return clearInterval(interval);
+    }
+
+    const particleCount = 50 * (timeLeft / duration);
+
+    // Launch confetti from different positions
+    confetti({
+      ...defaults,
+      particleCount,
+      origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 },
+      colors: ["#FFE5E5", "#8B1538", "#FFF8F0", "#FF69B4", "#FF1493"],
+    });
+
+    confetti({
+      ...defaults,
+      particleCount,
+      origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 },
+      colors: ["#FFE5E5", "#8B1538", "#FFF8F0", "#FF69B4", "#FF1493"],
+    });
+  }, 250);
+
+  // Heart-shaped confetti burst
+  confetti({
+    particleCount: 100,
+    spread: 160,
+    origin: { y: 0.6 },
+    colors: ["#FFE5E5", "#8B1538", "#FFF8F0", "#FF69B4", "#FF1493"],
+    shapes: ["circle"],
+    scalar: 1.2,
+    zIndex: 9999,
+  });
+}
+
+// Bubble expansion tracking
+let noAttempts = 0;
+const maxAttempts = 8; // Number of attempts before bubble bursts
+let currentScale = 1;
+let hasBurst = false;
+
+// Function to expand Yes button like a bubble
+function expandYesBubble() {
+  if (hasBurst) return;
+
+  noAttempts++;
+
+  // Calculate new scale - exponential growth
+  const scaleIncrement = 0.4 + noAttempts * 0.15;
+  currentScale += scaleIncrement;
+
+  // Add pulsating effect
+  gsap.to(yesButton, {
+    scale: currentScale,
+    duration: 0.5,
+    ease: "elastic.out(1, 0.5)",
+    boxShadow: `0 0 ${20 + noAttempts * 10}px rgba(139, 21, 56, 0.${30 + noAttempts * 5})`,
+  });
+
+  // Add subtle floating animation
+  gsap.to(yesButton, {
+    y: Math.sin(noAttempts) * 10,
+    duration: 1,
+    ease: "sine.inOut",
+    repeat: -1,
+    yoyo: true,
+  });
+
+  // Check if bubble should burst
+  if (noAttempts >= maxAttempts) {
+    burstBubble();
+  }
+}
+
+// Function to burst the bubble and cover viewport
+function burstBubble() {
+  hasBurst = true;
+
+  // Get viewport dimensions
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+
+  // Calculate scale needed to cover viewport
+  const buttonRect = yesButton.getBoundingClientRect();
+  const scaleX = vw / buttonRect.width;
+  const scaleY = vh / buttonRect.height;
+  const finalScale = Math.max(scaleX, scaleY) * 1.5;
+
+  // Position button at center of viewport
+  const buttonCenterX = buttonRect.left + buttonRect.width / 2;
+  const buttonCenterY = buttonRect.top + buttonRect.height / 2;
+  const viewportCenterX = vw / 2;
+  const viewportCenterY = vh / 2;
+  const translateX = viewportCenterX - buttonCenterX;
+  const translateY = viewportCenterY - buttonCenterY;
+
+  // Make button fixed and bring to front (but below No button)
+  yesButton.style.position = "fixed";
+  yesButton.style.zIndex = "9999";
+  yesButton.style.left = `${buttonCenterX}px`;
+  yesButton.style.top = `${buttonCenterY}px`;
+  yesButton.style.transform = "translate(-50%, -50%)";
+
+  // Animate to fill viewport
+  gsap.to(yesButton, {
+    scale: finalScale,
+    x: translateX,
+    y: translateY,
+    duration: 1,
+    ease: "power2.inOut",
+    borderRadius: "0%",
+    onUpdate: function () {
+      // Create ripple effect during expansion
+      if (this.progress() < 0.8) {
+        yesButton.style.boxShadow = `0 0 ${100 * this.progress()}px rgba(139, 21, 56, ${0.8 - this.progress() * 0.5})`;
+      }
+    },
+    onComplete: () => {
+      // Hide No button before triggering burst effect
+      gsap.to(noButton, {
+        opacity: 0,
+        scale: 0,
+        duration: 0.3,
+        ease: "back.in(2)",
+        onComplete: () => {
+          // Trigger burst effect after No button is hidden
+          triggerBurstEffect();
+        },
+      });
+    },
+  });
+
+  // Play burst sound
+  playBurstSound();
+}
+
+// Function to trigger burst effect
+function triggerBurstEffect() {
+  // Create particle burst effect
+  const particleCount = 50;
+  const particles = [];
+
+  for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement("div");
+    particle.style.position = "fixed";
+    particle.style.width = "20px";
+    particle.style.height = "20px";
+    particle.style.borderRadius = "50%";
+    particle.style.backgroundColor = [
+      "#FFE5E5",
+      "#8B1538",
+      "#FFF8F0",
+      "#FF69B4",
+    ][Math.floor(Math.random() * 4)];
+    particle.style.left = "50%";
+    particle.style.top = "50%";
+    particle.style.zIndex = "10001";
+    particle.style.pointerEvents = "none";
+    document.body.appendChild(particle);
+    particles.push(particle);
+
+    // Animate particle outward
+    const angle = (Math.PI * 2 * i) / particleCount;
+    const distance = window.innerWidth;
+    const tx = Math.cos(angle) * distance;
+    const ty = Math.sin(angle) * distance;
+
+    gsap.to(particle, {
+      x: tx,
+      y: ty,
+      opacity: 0,
+      scale: Math.random() * 2 + 1,
+      duration: 1.5,
+      ease: "power2.out",
+      onComplete: () => {
+        particle.remove();
+      },
+    });
+  }
+
+  // Trigger confetti
+  triggerConfetti();
+
+  // Play celebration sound
+  playCelebrationSound();
+
+  // Fade out Yes button and show celebration
+  gsap.to(yesButton, {
+    opacity: 0,
+    duration: 0.8,
+    delay: 0.5,
+    onComplete: () => {
+      yesButton.style.display = "none";
+      celebrationMessage.classList.remove("hidden");
+      celebrationMessage.style.zIndex = "10002";
+
+      gsap.from(celebrationMessage, {
+        scale: 0,
+        opacity: 0,
+        duration: 0.8,
+        ease: "back.out(1.7)",
+      });
+    },
+  });
+}
+
+// Yes button direct click handler
+yesButton.addEventListener("click", () => {
+  if (!hasBurst) {
+    // If clicked before burst, trigger burst immediately
+    noAttempts = maxAttempts;
+    burstBubble();
+  }
+});
+
+// No button movement logic with bubble expansion
+let moveAttempts = 0;
+
+function moveNoButton() {
+  moveAttempts++;
+
+  // Expand Yes button bubble
+  expandYesBubble();
+
+  // Get button container dimensions
+  const containerRect = buttonContainer.getBoundingClientRect();
+  const buttonRect = noButton.getBoundingClientRect();
+
+  // Calculate viewport-relative movement for mobile responsiveness
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+  const isMobile = vw < 640;
+
+  let newX, newY;
+
+  // Make it increasingly harder to catch after multiple attempts
+  // Use viewport-relative movement for better mobile experience
+  const movementRange = isMobile
+    ? Math.min(vw * 0.4 + moveAttempts * (vw * 0.05), vw * 0.9)
+    : Math.min(vw * 0.3 + moveAttempts * (vw * 0.05), vw * 0.8);
+
+  do {
+    newX = Math.random() * movementRange - movementRange / 2;
+    newY = isMobile
+      ? Math.random() * (vh * 0.2) - vh * 0.1
+      : Math.random() * (vh * 0.15) - vh * 0.075;
+  } while (
+    Math.abs(newX) < (isMobile ? 30 : 50) &&
+    Math.abs(newY) < (isMobile ? 20 : 30)
+  ); // Ensure it moves far enough
+
+  // Apply random position using GSAP for smooth animation
+  gsap.to(noButton, {
+    x: newX,
+    y: newY,
+    duration: 0.3,
+    ease: "power2.out",
+    rotation: Math.random() * 20 - 10,
+  });
+
+  // Change button text based on attempts
+  if (noAttempts >= maxAttempts - 1) {
+    noButton.textContent = "Too late! 💥";
+  } else if (moveAttempts > 10) {
+    noButton.textContent = "Still no! 😜";
+  } else if (moveAttempts > 5) {
+    noButton.textContent = "Nice try! 😏";
+  }
+}
+
+// Handle window resize for responsive button positioning
+let resizeTimeout;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    if (window.innerWidth >= 640 && noButton.style.position !== "fixed") {
+      noButton.style.position = "absolute";
+      noButton.style.left = "50%";
+      noButton.style.top = "auto";
+      noButton.style.bottom = "0";
+      noButton.style.transform = "translateX(-50%)";
+    } else if (window.innerWidth < 640) {
+      noButton.style.position = "relative";
+      noButton.style.left = "auto";
+      noButton.style.top = "auto";
+      noButton.style.bottom = "auto";
+      noButton.style.transform = "none";
+      gsap.set(noButton, { x: 0, y: 0, rotation: 0 });
+    }
+  }, 100);
+});
+
+// ===== Music Player =====
+const musicToggle = document.getElementById('music-toggle');
+const musicControls = document.getElementById('music-controls');
+const playPauseBtn = document.getElementById('play-pause-btn');
+const volumeSlider = document.getElementById('volume-slider');
+const bgMusic = document.getElementById('bg-music');
+const musicIcon = musicToggle.querySelector('.music-icon');
+const pauseIcon = musicToggle.querySelector('.pause-icon');
+const playIconCtrl = playPauseBtn.querySelector('.play-icon');
+const pauseIconCtrl = playPauseBtn.querySelector('.pause-icon-ctrl');
+
+let controlsOpen = false;
+let isPlaying = false;
+
+// Set initial volume to 10%
+bgMusic.volume = 0.1;
+volumeSlider.value = 10;
+
+// Intro overlay: entrance animation, then on "Yes" click play music and close smoothly
+const introOverlay = document.getElementById('intro-overlay');
+const introYesBtn = document.getElementById('intro-yes-btn');
+if (introOverlay && introYesBtn) {
+  const introContent = introOverlay.querySelector('.intro-content');
+  gsap.from(introOverlay, { opacity: 0, duration: 0.4, ease: 'power2.out' });
+  gsap.from(introContent, {
+    opacity: 0,
+    y: 24,
+    duration: 0.6,
+    delay: 0.15,
+    ease: 'power2.out',
+  });
+
+  introYesBtn.addEventListener('click', () => {
+    introOverlay.classList.add('intro-closing');
+    bgMusic.play().catch(() => {});
+
+    gsap.to(introContent, {
+      scale: 0.92,
+      opacity: 0,
+      duration: 0.6,
+      ease: 'power2.in',
+    });
+    gsap.to(introOverlay, {
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power2.in',
+      delay: 0.1,
+      onComplete: () => {
+        introOverlay.style.visibility = 'hidden';
+        introOverlay.style.display = 'none';
+      },
+    });
+  });
+}
+
+// Toggle controls panel
+musicToggle.addEventListener('click', () => {
+  controlsOpen = !controlsOpen;
+  musicControls.classList.toggle('open', controlsOpen);
+});
+
+// Close controls when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('#music-player') && controlsOpen) {
+    controlsOpen = false;
+    musicControls.classList.remove('open');
+  }
+});
+
+// Play / Pause
+function togglePlayback() {
+  if (isPlaying) {
+    bgMusic.pause();
+  } else {
+    bgMusic.play().catch(() => {});
+  }
+}
+
+playPauseBtn.addEventListener('click', togglePlayback);
+
+// Sync UI to actual audio state
+bgMusic.addEventListener('play', () => {
+  isPlaying = true;
+  musicToggle.classList.add('playing');
+  musicIcon.classList.add('hidden');
+  pauseIcon.classList.remove('hidden');
+  playIconCtrl.classList.add('hidden');
+  pauseIconCtrl.classList.remove('hidden');
+});
+
+bgMusic.addEventListener('pause', () => {
+  isPlaying = false;
+  musicToggle.classList.remove('playing');
+  musicIcon.classList.remove('hidden');
+  pauseIcon.classList.add('hidden');
+  playIconCtrl.classList.remove('hidden');
+  pauseIconCtrl.classList.add('hidden');
+});
+
+// Volume control
+volumeSlider.addEventListener('input', (e) => {
+  const val = e.target.value;
+  bgMusic.volume = val / 100;
+  // Update slider background gradient
+  volumeSlider.style.background =
+    `linear-gradient(to right, #8b1538 ${val}%, rgba(139,21,56,0.15) ${val}%)`;
+});
+
+// Init slider gradient at 10%
+volumeSlider.style.background =
+  'linear-gradient(to right, #8b1538 10%, rgba(139,21,56,0.15) 10%)';
+
+// No button hover handler - expands Yes button
+noButton.addEventListener("mouseenter", moveNoButton);
+
+// No button click handler - also expands Yes button
+noButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  moveNoButton();
+});
+</script>
+    <script id="dhws-dataInjector" src="/public/dhws-data-injector.js"></script>
+  </body>
+</html>
