@@ -2314,14 +2314,17 @@ audio::-webkit-media-controls-panel {
 .valentine-question-section {
   position: relative;
   z-index: 10;
-  padding: 64px 16px;
+  padding: 64px 48px;
   text-align: center;
+  overflow: visible;
+  background: radial-gradient(circle at center, rgba(255, 182, 193, 0.25) 0%, transparent 70%);
 }
 
 .valentine-question-section > div {
   max-width: 672px;
   margin: 0 auto;
   width: 100%;
+  overflow: visible;
 }
 
 .valentine-question-section h2 {
@@ -2333,7 +2336,8 @@ audio::-webkit-media-controls-panel {
   padding: 0 8px;
 }
 
-.button-container {
+.button-container,
+.valentine-question-section .button-container {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -2341,14 +2345,27 @@ audio::-webkit-media-controls-panel {
   justify-content: center;
   gap: 16px;
   min-height: 140px;
-  padding: 0 8px;
+  padding: 0 24px;
+  overflow: visible;
 }
 
 @media (min-width: 640px) {
-  .button-container {
-      flex-direction: row;
-      gap: 24px;
-      min-height: 120px;
+  .button-container,
+  .valentine-question-section .button-container {
+    flex-direction: row;
+    gap: 24px;
+    min-height: 120px;
+    padding: 0 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .valentine-question-section {
+    padding: 48px 24px;
+  }
+  .button-container,
+  .valentine-question-section .button-container {
+    padding: 0 16px;
   }
 }
 

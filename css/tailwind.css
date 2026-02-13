@@ -571,10 +571,63 @@ audio::-webkit-media-controls-panel {
     font-size: 1.3rem !important;
   }
 }
-/* .valentine-question-section {
-  background: radial-gradient(circle at center, rgba(255, 182, 193, 0.25) 0%, transparent 70%);
+/* ================================
+   Valentine Question Section (fix overflow on deploy)
+   ================================ */
+.valentine-question-section {
   position: relative;
-} */
+  z-index: 10;
+  padding: 64px 48px;
+  text-align: center;
+  overflow: visible;
+  background: radial-gradient(circle at center, rgba(255, 182, 193, 0.25) 0%, transparent 70%);
+}
+
+.valentine-question-section > div {
+  max-width: 672px;
+  margin: 0 auto;
+  width: 100%;
+  overflow: visible;
+}
+
+.valentine-question-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.875rem, 5vw, 3.75rem);
+  font-weight: 700;
+  color: #8B1538;
+  margin-bottom: 48px;
+  padding: 0 8px;
+}
+
+.valentine-question-section .button-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  min-height: 140px;
+  padding: 0 24px;
+  overflow: visible;
+}
+
+@media (min-width: 640px) {
+  .valentine-question-section .button-container {
+    flex-direction: row;
+    gap: 24px;
+    min-height: 120px;
+    padding: 0 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .valentine-question-section {
+    padding: 48px 24px;
+  }
+  .valentine-question-section .button-container {
+    padding: 0 16px;
+  }
+}
 
 /* ================================
    Intro Overlay Styles
